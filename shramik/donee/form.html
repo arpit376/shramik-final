@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>DONEE FORM</title>
+<style>
+	body{
+		background-color:white;
+		font-size:20px;
+		text-align:left;
+	}
+	h1{
+		text-align:left;
+		font-style:Broadway;
+	}
+</style>
+<script>
+	function validation()
+	{
+		var name=document.getElementById("nm").value;
+		var phone_number=document.getElementById("pn").value;
+		var address=document.getElementById("ad").value;
+		var city=document.getElementById("ct").value;
+		var family_members=document.getElementById("fm").value;
+		var daily_income=document.getElementById("di").value;
+		var id_proof=document.getElementById("ip").value;
+		var account_number=document.getElementById("an").value;
+		var ifsc=document.getElementById("ifsc").value;
+		if(name==""){
+			alert("Name required");
+			return false;}
+		if(!isNaN(name)){
+			alert("invalid name");
+			return false;}
+		if(phone_number==""){
+			alert("phone_number required");
+			return false;}
+		if(isNaN(phone_number)){
+			alert("phone_number should be in numbers");
+			return false;}
+		if(phone_number.length<10 || phone_number.length>10){
+			alert("invalid phone_number");
+			return false;}
+		if(address==""){
+			alert("address required");
+			return false;}
+		if(city==""){
+			alert("city required");
+			return false;}
+		if(family_members==""){
+			alert("family_members required");
+			return false;}
+		if(daily_income==""){
+			alert("daily_income required");
+			return false;}
+		if(id_proof==""){
+			alert("id_proof required");
+			return false;}
+		if(account_number==""){
+			alert("account_number required");
+			return false;}
+		if(ifsc==""){
+			alert("IFSC field require");
+			return false;}
+	}
+</script>
+</head>
+<body>
+<h1>DONEE LOGIN PAGE</h1>
+<form method = "post" action = "insert_donee.php">
+NAME &nbsp           : &nbsp <input type="text" name="name" id="nm" placeholder="HEAD of the family"></br></br>
+PHONE NUMBER &nbsp   : &nbsp <input type="number" name="phone_number" id="pn"></br></br>
+ADDRESS &nbsp        : &nbsp <input type="address" name="address" id="ad"></br></br>
+STATE &nbsp          : &nbsp <select name="city"><option value="">--Select State--</option>
+<option value="28">Andhra Pradesh</option>
+<option value="12">Arunachal Pradesh</option>
+<option value="18">Assam</option>
+<option value="10">Bihar</option>
+<option value="4">Chandigarh</option>
+<option value="22">Chhattisgarh</option>
+<option value="7">Delhi</option>
+<option value="30">Goa</option>
+<option value="24">Gujarat</option>
+<option value="6">Haryana</option>
+<option value="2">Himachal Pradesh</option>
+<option value="1">Jammu and Kashmir</option>
+<option value="20">Jharkhand</option>
+<option value="29">Karnataka</option>
+<option value="32">Kerala</option>
+<option value="23">Madhya Pradesh</option>
+<option value="27">Maharashtra</option>
+<option value="14">Manipur</option>
+<option value="17">Meghalaya</option>
+<option value="15">Mizoram</option>
+<option value="13">Nagaland</option>
+<option value="21">Odisha</option>
+<option value="34">Puducherry</option>
+<option value="3">Punjab</option>
+<option value="8">Rajasthan</option>
+<option value="11">Sikkim</option>
+<option value="33">Tamil Nadu</option>
+<option value="36">Telangana</option>
+<option value="16">Tripura</option>
+<option value="9">Uttar Pradesh</option>
+<option value="5">Uttarakhand</option>
+<option value="19">West Bengal</option>
+</select></br></br>
+CITY &nbsp           : &nbsp <input type="text" name="city" id="ct"></br></br>
+FAMILY MEMBERS &nbsp : &nbsp <input type="number" name="dependents" id="fm"></br></br>
+DAILY INCOME &nbsp   : &nbsp <input type="number" name="daily_income" id="di"></br></br>
+ID PROOF &nbsp       : &nbsp <input type="text" name="id_proof" id="ip" placeholder="eg.aadhaar no., pan card no..."></br></br>
+ACCOUNT NUMBER &nbsp : &nbsp <input type="number" name="account_number" id="an"></br></br>
+IFSC &nbsp           : &nbsp <input type="text" name="ifsc" id="ifsc"></br></br>
+<input type="submit" value="SUBMIT" onclick="validation()">
+
+</form>
+</body>
+</html>

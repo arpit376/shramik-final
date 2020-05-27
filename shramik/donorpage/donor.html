@@ -1,0 +1,106 @@
+
+<html>
+<head>
+<title>DONATION FORM</title>
+<style>
+	body{
+		background-color:#f2f2f2;
+		font-size:20px;
+		text-align:left;
+	}
+	h1{
+		text-align:center;
+		font-style:Broadway;
+	}
+</style>
+<script>
+	function validation()
+	{
+		var name=document.getElementById("nm").value;
+		var phone_number=document.getElementById("pn").value;
+		var email=document.getElementById("e").value;
+		var district=document.getElementById("d").value;
+		var aadhaar=document.getElementById("a").value;
+		if(name==""){
+			alert("Name required");
+			return false;}
+		if(!isNaN(name)){
+			alert("invalid name");
+			return false;}
+		if(phone_number==""){
+			alert("phone_number required");
+			return false;}
+		if(isNaN(phone_number)){
+			alert("phone_number should be in numbers");
+			return false;}
+		if(phone_number.length()<10 || phone_number.length>10){
+			alert("invalid phone_number");
+			return false;}
+		if(isNaN(aadhar)){
+			alert("Aadhar number should be numeric");
+			return false;}
+		if(aadhar==""){
+		    alert("Please fill this field");
+			return false;}
+		if(aadhar.length()<12){
+		    alert("Too short, must be of 12 digits");
+		    return false;
+		}
+		if(aadhar.length()>12){
+		    alert("Too large, must be of 12 digits");
+		    return false;
+		}
+		if(district==""){
+			alert("district required");
+			return false;}
+		if(email=="")
+	    {
+			alert("Fill emailId");
+			return false;}
+		if(email.indexOf('@')<=0)
+		{
+			alert("Invalid email id");
+			return false;
+		}	
+		if((email.charAt((email.length)-4)!='.'))
+		{
+			alert("Invalid");
+			return false;
+		}	
+		else if((email.charAt((email.length)-3)!='.'))
+		{
+			alert("Invalid format");
+			return false;
+		}	
+		
+	}
+</script>
+</head>
+<body>
+<h2>Donor Registration Page</h2>
+<hr>
+<br>
+<form action="insert_donor.php" method="post">
+Name: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="text" name="donor_name" id="nm" placeholder="Full Name"></br></br>
+Phone number:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="number" name="phone" id="pn"></br></br>
+Aadhar number:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="number" name="aadhar" id="ip">
+</br></br>
+City for donation:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <select name="district"><option value="">--Select City--</option>
+<option value="1">Mumbai</option>
+<option value="2">Pune</option>
+<option value="3">Delhi</option>
+<option value="4">Indore</option>
+<option value="5">Bangalore</option>
+<option value="6">Hyderabad</option>
+<option value="7">Chennai</option>
+<option value="8">Kanpur</option>
+<option value="9">Agra</option>
+<option value="10">Nagpur</option>
+</select></br></br>
+
+Email Id: &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="email" name="email" id="e" placeholder="eg; abc@gmail.com"></br></br>
+<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="submit" value="SUBMIT" onclick="validation()">
+
+</form>
+</body>
+</html>
